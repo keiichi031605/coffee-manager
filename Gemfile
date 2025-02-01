@@ -46,11 +46,15 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 end
 
-
-
-gem "rspec-rails", "~> 7.1"
-gem "factory_bot_rails", "~> 6.4"
-gem "faker", "~> 3.5"
-
+# Authentication
 gem "devise", "~> 4.9"
 gem "devise-jwt", "~> 0.12.1"
+
+# Testing
+gem 'rspec-rails', group: [:development, :test]
+gem 'factory_bot_rails', group: [:development, :test]
+gem 'faker', group: [:development, :test]
+gem 'database_cleaner', group: [:test]
+
+# Serialization
+gem 'active_model_serializers'
