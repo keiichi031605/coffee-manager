@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  # get '/member-data', to: 'members#show'
-
-  # root "home#index"
+  devise_scope :user do
+    post '/signup', to: 'users/registrations#create'
+  end
 end
