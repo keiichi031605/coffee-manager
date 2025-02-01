@@ -1,4 +1,4 @@
-class Api::V1::SessionsController < Devise::SessionsController
+class Users::RegistrationsController < Devise::RegistrationsController
   respond_to :json
 
   private
@@ -6,9 +6,4 @@ class Api::V1::SessionsController < Devise::SessionsController
   def respond_with(resource, _opts = {})
     render json: { user: resource }, status: :ok
   end
-
-  def respond_to_on_destroy
-    head :no_content
-  end
 end
-  
